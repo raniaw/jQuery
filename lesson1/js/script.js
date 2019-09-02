@@ -40,9 +40,32 @@ $("h3:eq(1)").text("new text chaged with jquery")
 $("h3:eq(2)").html("<input type='\"text'\">  <button >send</button>")
 
 $("input").val("a letter");
+console.log($("input").attr("type"));
+$("h3:eq(3)").html("<input type='\"text'\"> ");
+
+$("input:eq(1)").attr("type", "color").val(colorCreateHexColor());
+$("input:eq(1)").css({
+    "height": "80px",
+    "width": "100px"
+})
+$("h3:eq(4)").text($("input:eq(1)").val());
 
 
+/**
+ * Funktion für die zufällige hexedezimalige Farbeerstellung
+ */
 
+
+function colorCreateHexColor() {
+    let letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    console.log("color: " + color);
+    return color;
+
+}
 
 
 
