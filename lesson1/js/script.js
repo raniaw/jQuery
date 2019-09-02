@@ -22,9 +22,20 @@ $(".highlight").css({
     "fontSize": "20px",
     "width": "200px"
 });
-$(".third").css("border", "1px solid orange");
-$("div:first").css("color", "pink");
 
+
+$(".third").css("border", "1px solid orange");
+
+$("div:first").css("color", "pink");
+// gleiche wie oben
+// $("div:first-of-type").css("color", "pink");
+// $("div:eq(0)").css("color", "pink");
+
+$("div:eq(1)").css("color", "red");
+//gleiche wie oben 
+//$("div.highlight:first").css("color", "red");
+
+$("div:eq(3)").css("font-weight", "bold");
 
 
 
