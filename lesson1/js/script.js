@@ -23,7 +23,6 @@ $(".highlight").css({
     "width": "200px"
 });
 
-
 $(".third").css("border", "1px solid orange");
 
 $("div:first").css("color", "pink");
@@ -36,6 +35,15 @@ $("div:eq(1)").css("color", "red");
 //$("div.highlight:first").css("color", "red");
 
 $("div:eq(3)").css("font-weight", "bold");
+
+$("h3:eq(1)").text("new text chaged with jquery")
+$("h3:eq(2)").html("<input type='\"text'\">  <button >send</button>")
+
+$("input").val("a letter");
+
+
+
+
 
 
 
