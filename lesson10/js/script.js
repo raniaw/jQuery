@@ -1,18 +1,18 @@
-// mit function arrow '=>' läuft nicht 
-
 var template = $("#hb-intro").html();
 //compile the template
 var templateScript = Handlebars.compile(template);
 
 var content = {
     "name": "Bill Gates",
-    "occupation": "MS-CEO"
+    "occupation": "MS-CEO",
+    "years": "63"
 }
 
 var html = templateScript(content);
 
 //insert html code in the page
 $(document.body).append(html);
+
 
 
 
