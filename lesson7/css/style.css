@@ -1,0 +1,16 @@
+.highlight {
+  background-color: yellow;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#pErr {
+  color: red;
+  font-size: 20px;
+  padding: 10px;
+  font-family: "Syncopate";
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
