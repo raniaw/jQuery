@@ -1,17 +1,30 @@
-var template = $("#hb-each").html();
+var template = $("#hb-entry").html();
 //compile the template
 var templateScript = Handlebars.compile(template);
 
 var content = {
-    "mylist": ["Mascha", "Medved"],
-    "name": "List-Name",
-    "autor": "TV"
+    "title": "Vanilly Blog",
+    "author": {
+        "name": "Boris"
+    },
+    "post": ["post 1", "post 2", "post 3"]
+
 }
 
 var html = templateScript(content);
 
 //insert html code in the page
 $(document.body).append(html);
+
+
+
+
+
+
+
+
+
+
 
 
 
