@@ -17,7 +17,7 @@
 
 </head>
 
-<body>
+<body class="">
     <h3 class="text-center text-info">
         jQuery HandlebarsJs HB-Cards
     </h3>
@@ -25,25 +25,21 @@
     <script id="hb-cards" type="text/x-handlebars-template">
         <div class="row d-flex">
             <div class="col ">
-                <h3 class="col-12 text-center d-flex justify-content-center align-items-center ">{{title}}</h3>
+                <h3 class="col-12 text-center text-light d-flex justify-content-center align-items-center ">{{title}}</h3>
 
-                <div class="container">
-
-                    <div class="card ">
-                        {{#each casting}}
-                        <div class="card card-body d-flex justify-content-center align-items-center ">
-
-                            <h5 class="card-title">"{{this.actor.cast}}"</h5>
-
-
-                            <img src="{{img}}" class="img-thumbnail ">
-
-                            <p class=" card-text">Name: {{this.actor.name}}<br> Age: {{this.age}}</p>
-                            <p></p>
-
+                <div class="container  rounded shadow-lg col-4">
+                    {{#each casting}}
+                    <div class="card text-center bg-transparent m-3 border border-white rounded shadow-lg">
+                        <div class="card-header">
+                            <div class="card card-body rounded d-flex justify-content-center align-items-center ">
+                                <h5 class="card-title text-info">"{{this.actor.cast}}"</h5>
+                                <img src="{{img}}" class="img-thumbnail bg-light shadow-sm rounded ">
+                                <p class="text-muted card-text">Name: {{this.actor.name}}<br> Age: {{this.age}}</p>
+                                <p></p>
+                            </div>
                         </div>
-                        {{/each}}
                     </div>
+                    {{/each}}
                 </div>
             </div>
         </div>

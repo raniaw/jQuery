@@ -3,7 +3,7 @@ var template = $("#hb-cards").html();
 //compile the template
 var templateScript = Handlebars.compile(template);
 var context = {
-    "title": "Casting Game of throns",
+    "title": "Casting Game of Throns",
     "casting": [{
             "actor": {
                 "cast": "Aria Stark",

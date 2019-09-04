@@ -1,4 +1,11 @@
 img {
   width: 300px;
 }
+
+body {
+  background-image: url(/lesson14/img/got.jpg);
+  background-size: 100%;
+  background-position: center center;
+  background-attachment: fixed;
+}
 /*# sourceMappingURL=style.css.map */
