@@ -52,10 +52,10 @@ jQuery(function($) {
             }
         }
     };
-    let new_todo = document.querySelector(".new-todo");
-    let toggle_all = document.querySelector(".toggle-all");
-    let footer = document.querySelector(".footer");
-    let todo_list = document.querySelector(".todo-list");
+    var new_todo = document.querySelector(".new-todo");
+    var toggle_all = document.querySelector(".toggle-all");
+    var footer = document.querySelector(".footer");
+    var todo_list = document.querySelector(".todo-list");
 
     var App = {
         init: function() {
@@ -106,7 +106,7 @@ jQuery(function($) {
             // $('.main').toggle(todos.length > 0);
 
             // $('.toggle-all').prop('checked', this.getActiveTodos().length === 0);
-            toggle_all.checked = this.getActiveTodos().length === 0;
+            toggle_all.checked = this.getActiveTodos().length === 0; // get true or false
 
             this.renderFooter();
 
