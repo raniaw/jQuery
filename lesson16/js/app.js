@@ -125,14 +125,14 @@ jQuery(function($) {
                 completedTodos: todoCount - activeTodoCount,
                 filter: this.filter
             });
-
-            $('.footer')
-                .toggle(todoCount > 0)
-                .html(template);
+            footer.innerHTML = template;
+            // $('.footer')
+            //     .toggle(todoCount > 0)
+            //     .html(template);
         },
         toggleAll: function(e) {
-            var isChecked = $(e.target).prop('checked');
-
+            //var isChecked = $(e.target).prop('checked');
+            var isChecked = e.target.checked;
             this.todos.forEach(function(todo) {
                 todo.completed = isChecked;
             });
@@ -167,9 +167,10 @@ jQuery(function($) {
         // accepts an element from inside the `.item` div and
         // returns the corresponding index in the `todos` array
         getIndexFromEl: function(el) {
-            var id = $(el)
-                .closest('li')
-                .data('id');
+            // var id = $(el)
+            // .closest('li')
+            // .data('id');
+            var id = el.closest('li').dataset.id;
             var todos = this.todos;
             var i = todos.length;
 
@@ -180,8 +181,10 @@ jQuery(function($) {
             }
         },
         create: function(e) {
-            var $input = $(e.target);
-            var val = $input.val().trim();
+            var $input = e.target;
+            var val = $input.value.trim();
+            // var $input = $(e.target);
+            // var val = $input.val().trim();
 
             if (e.which !== ENTER_KEY || !val) {
                 return;
@@ -193,7 +196,7 @@ jQuery(function($) {
                 completed: false
             });
 
-            $input.val('');
+            $input.value = "";
 
             this.render();
         },
@@ -203,14 +206,22 @@ jQuery(function($) {
             this.render();
         },
         editingMode: function(e) {
-            var $input = $(e.target)
+            var $input = e.target
                 .closest('li')
-                .addClass('editing')
-                .find('.edit');
+                .classList('editing')
+                .contains('.edit');;
+            //var $input = $(e.target)
+            // .closest('li')
+            // .addClass('editing')
+            // .find('.edit');
             // puts caret at end of input
-            var tmpStr = $input.val();
-            $input.val('');
-            $input.val(tmpStr);
+            // var tmpStr = $input.val();
+            // $input.val('');
+            // $input.val(tmpStr);
+            // $input.focus();
+            var tmpStr = $input.value;
+            $input.value = "";
+            $input.value = tmpStr;
             $input.focus();
         },
         editKeyup: function(e) {
@@ -219,18 +230,26 @@ jQuery(function($) {
             }
 
             if (e.which === ESCAPE_KEY) {
-                $(e.target)
-                    .data('abort', true)
-                    .blur();
+                // $(e.target)
+                //     .data('abort', true)
+                //     .blur();
+                e.target
+                    .dataset.abort.blur();
             }
         },
         update: function(e) {
+            // var el = e.target;
+            // var $el = $(el);
+            // var val = $el.val().trim();
             var el = e.target;
-            var $el = $(el);
-            var val = $el.val().trim();
+            var $el = el;
+            var val = el.value.trim();
 
-            if ($el.data('abort')) {
-                $el.data('abort', false);
+            // if (el.data('abort')) {
+            //     $el.data('abort', false);
+
+            if (el.dataset.abort) {
+                el.dataset.abort;
             } else if (!val) {
                 this.destroy(e);
                 return;
