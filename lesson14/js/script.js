@@ -7,18 +7,29 @@ var context = {
     "casting": [{
             "actor": {
                 "cast": "Aria Stark",
-                "name": "Maisie Williams"
+                "name": "Maisie Williams",
+                "zitate": ""
             },
             "age": "22",
-            "img": "img/aria.png"
+            "img": "img/aria_stark.png"
         },
         {
             "actor": {
                 "cast": "Jon Snow",
-                "name": "Kit Harington"
+                "name": "Kit Harington",
+                "zitate": ""
             },
             "age": "32",
-            "img": "img/jon.png"
+            "img": "img/jon_snow.png"
+        },
+        {
+            "actor": {
+                "cast": "Daenerys Targaryen",
+                "name": "Emilia Clarke",
+                "zitate": "Ich bin Daenerys Sturmtochter, vom Blut des alten Valyria und ich nehme mir, was mein ist! Mit Feuer und mit Blut werde ich es mir holen! "
+            },
+            "age": "32",
+            "img": "img/daenerys_targaryen.png"
         }
     ]
 
