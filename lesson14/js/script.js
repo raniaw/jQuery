@@ -3,7 +3,7 @@ var template = $("#hb-cards").html();
 //compile the template
 var templateScript = Handlebars.compile(template);
 var context = {
-    "title": "Character Game of Throns",
+    "title": 'Charaktere von "Game of Throns"',
     "casting": [{
             "actor": {
                 "cast": "Arya Stark",
@@ -49,10 +49,20 @@ var context = {
                 "cast": "Cersei Lannister",
                 "name": "Lena Headey",
                 "haus": " Lannister",
-                "zitate": " 	Lügen, die fallen euch leicht. Das weiß jeder. Aber Lauterkeit, Anstand, Fürsorge gehören nicht zu euren Stärken fürchte ich."
+                "zitate": "Lügen, die fallen euch leicht. Das weiß jeder. Aber Lauterkeit, Anstand, Fürsorge gehören nicht zu euren Stärken fürchte ich."
             },
             "age": "46",
             "img": "img/cersei_lannister.png"
+        },
+        {
+            "actor": {
+                "cast": "Jaime Lannister",
+                "name": "Nikolaj Coster-Waldau",
+                "haus": " Lannister",
+                "zitate": "Es gibt keine Männer wie mich. Nur mich."
+            },
+            "age": "49",
+            "img": "img/jaime_lannister.png"
         }
     ]
 
