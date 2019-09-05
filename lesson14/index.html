@@ -25,14 +25,17 @@
             <div class="col">
                 <h3 class="col-12 text-center text-light d-flex justify-content-center align-items-center ">{{title}}</h3>
 
-                <div class="container  rounded shadow-lg col-sm-12 col-md-6 col-lg-4">
+                <div class="container  rounded shadow-lg col-sm-9 col-md-8 col-lg-6">
                     {{#each casting}}
                     <div class="card text-center bg-transparent m-3 border border-white rounded shadow-lg">
                         <div class="card-header">
                             <div class="card card-body rounded d-flex justify-content-center align-items-center ">
                                 <h5 class="card-title text-info">"{{this.actor.cast}}"</h5>
                                 <img src="{{img}}" class="img-thumbnail bg-light shadow-sm rounded ">
-                                <p class="text-muted card-text">Name: {{this.actor.name}}<br> Age: {{this.age}}</p>
+                                <p class="text-muted card-text">{{this.actor.name}}<br> {{this.age}} Jahre alt
+                                    <br> Haus: "{{this.actor.haus}}"
+                                    <br> "{{this.actor.zitate}}"
+                                </p>
                                 <p></p>
                             </div>
                         </div>

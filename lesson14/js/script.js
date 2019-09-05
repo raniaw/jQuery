@@ -3,21 +3,23 @@ var template = $("#hb-cards").html();
 //compile the template
 var templateScript = Handlebars.compile(template);
 var context = {
-    "title": "Casting Game of Throns",
+    "title": "Character Game of Throns",
     "casting": [{
             "actor": {
-                "cast": "Aria Stark",
+                "cast": "Arya Stark",
                 "name": "Maisie Williams",
-                "zitate": ""
+                "haus": "Stark",
+                "zitate": "Ein Mädchen ist Arya Stark von Winterfell und ich gehe jetzt nach Hause."
             },
             "age": "22",
-            "img": "img/aria_stark.png"
+            "img": "img/arya_stark.png"
         },
         {
             "actor": {
                 "cast": "Jon Snow",
                 "name": "Kit Harington",
-                "zitate": ""
+                "haus": "Stark",
+                "zitate": "Deine Mutter war Lyanna Stark und dein Vater, dein leiblicher Vater, war Rhaegar Targaryen. Du bist nie ein Bastard gewesen. Du bist Aegon Targaryen, der wahre Erbe des Eisernen Throns."
             },
             "age": "32",
             "img": "img/jon_snow.png"
@@ -26,10 +28,31 @@ var context = {
             "actor": {
                 "cast": "Daenerys Targaryen",
                 "name": "Emilia Clarke",
+                "haus": "Targaryen",
                 "zitate": "Ich bin Daenerys Sturmtochter, vom Blut des alten Valyria und ich nehme mir, was mein ist! Mit Feuer und mit Blut werde ich es mir holen! "
             },
             "age": "32",
             "img": "img/daenerys_targaryen.png"
+        },
+        {
+            "actor": {
+                "cast": "Tyrion Lannister",
+                "name": "Peter Dinklage",
+                "haus": "Lennister",
+                "zitate": "Zuzusehen wie dein abscheulicher Bastard starb, bereitete mir mehr Befriedigung als Tausend lügende Huren!  "
+            },
+            "age": "50",
+            "img": "img/tyrion_lannister.png"
+        },
+        {
+            "actor": {
+                "cast": "Cersei Lannister",
+                "name": "Lena Headey",
+                "haus": " Lannister",
+                "zitate": " 	Lügen, die fallen euch leicht. Das weiß jeder. Aber Lauterkeit, Anstand, Fürsorge gehören nicht zu euren Stärken fürchte ich."
+            },
+            "age": "46",
+            "img": "img/cersei_lannister.png"
         }
     ]
 
