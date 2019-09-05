@@ -1,62 +1,50 @@
 // mit function arrow '=>' läuft nicht 
 
-// *** with jQuery ***
+//*** with jQuery ***
 $(document).ready(function() {
-    $("#frm").on("click", function(e) {
-        e.preventDefault();
+    $("#btn").on("click", function() {
         var name = $("#name").val();
-        if (name == "" || name == null) {
-            $("#pErr").css("color", "red")
-            $("#pErr").text("yours input is empty")
+        if (name === "" || name === null) {
+            $("#pErr").css("color", "red");
+            $("#pErr").text("yours input is empty");
+            $("#name").val("");
+            $("#name").focus();
         } else {
             $("#pErr").text("");
             let nameUp = name.toUpperCase();
-            var day = new Date().getDay();
-            var rest = 6 - day;
-            console.log(day, " ", rest)
-            var text = "";
-            switch (day) {
-                case 0:
-                    text = "Hello <span>" + nameUp + "</span>. Today is Sunday, is the Weekend";
-                    $("#name").val("");
-                    break;
-                case 1:
-                    text = "Hello  <span>" + nameUp + "</span>. Today is Monday. Only " + rest + " days left until Weekend!";
-                    $("#name").val("");
-                    break;
-                case 2:
-                    text = "Hello  <span>" + nameUp + "</span>. Today is Tuesday . Only " + rest + " days left until Weekend!";
-                    $("#name").val("");
-                    break;
-                case 3:
-                    text = "Hello  <span>" + nameUp + "</span>. Today is Wednesday . Only " + rest + " days left until Weekend!";
-                    $("#name").val("");
-                    break;
-                case 4:
-                    text = "Hello <span>" + nameUp + "</span>. Today is Thursday . Only " + rest + " days left until Weekend!";
-                    $("#name").val("");
-                    break;
-                case 5:
-                    text = "Hello  <span>" + nameUp + "</span>. Today is Friday . Only " + rest + " days left until Weekend!";
-                    $("#name").val("");
-                    break;
-                case 6:
-                    text = "Hello <span>" + nameUp + "</span>. Today is Saturday, is the Weekend";
-                    $("#name").val("");
-                    break;
-            }
+            var rest = 6 - (new Date().getDay());
+            var weeknedDays = ['Sundy', 'Mondy', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            $("#pTxt").html(`Hallo ${nameUp} The day Today is ${weeknedDays[(new Date().getDay())]}  
+            and the Weekend after ${rest}`);
+            $("#name").val("");
+            $("#name").focus();
 
-            $(".greating").html(text);
         }
     });
-
 });
 
-//
+// with js the same
 
+// var inpName = document.getElementById("name");
+// var pTxt = document.getElementById("pTxt");
+// var btn = document.getElementById("btn");
+// var pErr = document.getElementById("pErr");
 
+// btn.addEventListener("click", function() {
 
+//     var weeknedDays = ['Sundy', 'Mondy', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+//     //    let date = new Date();
+//     var rest = 6 - new Date().getDay();
+//     // var name = inpName.value;
+//     if (inpName.value === null || inpName.value === "") {
+//         pErr.style.color = "red";
+//         pErr.innerText = "your input is empty";
+//     } else {
 
+//         pTxt.textContent = `Hallo ${inpName.value} The day Today is ${weeknedDays[(new Date().getDay())]}  and the Weekend after ${rest}`;
+//         pErr.innerText = "";
+//     }
+// });
 
 
 /**
