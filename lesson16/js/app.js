@@ -52,6 +52,10 @@ jQuery(function($) {
             }
         }
     };
+    let new_todo = document.querySelector(".new-todo");
+    let toggle_all = document.querySelector(".toggle-all");
+    let footer = document.querySelector(".footer");
+    let todo_list = document.querySelector(".todo-list");
 
     var App = {
         init: function() {
@@ -68,37 +72,48 @@ jQuery(function($) {
             }).init('/all');
         },
         bindEvents: function() {
-            let newTodo = document.getSelection(".new-todo");
-            let toggle_all = document.getSelection(".toogle-all");
-            let footer = document.getSelection(".footer");
-            console.log(newTodo);
-            console.log(toggle_all);
-            console.log(footer);
-            newTodo.addEventListener("keyup", this.create.bind(this));
-            toggle_all.addEventListener("change", this.toggleAll.bind(this))
-            footer.addEventListener("click", ".clear-completed", this.destroyCompleted.bind(this));
 
-            $('.new-todo').on('keyup', this.create.bind(this));
-            $('.toggle-all').on('change', this.toggleAll.bind(this));
-            $('.footer').on(
-                'click',
-                '.clear-completed',
-                this.destroyCompleted.bind(this)
-            );
-            $('.todo-list')
-                .on('change', '.toggle', this.toggle.bind(this))
-                .on('dblclick', 'label', this.editingMode.bind(this))
-                .on('keyup', '.edit', this.editKeyup.bind(this))
-                .on('focusout', '.edit', this.update.bind(this))
-                .on('click', '.destroy', this.destroy.bind(this));
+            new_todo.addEventListener("keyup", this.create.bind(this));
+            toggle_all.addEventListener("change", this.toggleAll.bind(this));
+            delegateEvent(footer, "click", ".clear-completed", this.destroyCompleted.bind(this));
+            delegateEvent(todo_list, "change", ".toggle", this.toggle.bind(this));
+            delegateEvent(todo_list, "dbclick", "label", this.editingMode.bind(this));
+            delegateEvent(todo_list, "keyup", ".edit", this.editKeyup.bind(this));
+            delegateEvent(todo_list, "focusout", ".edit", this.update.bind(this));
+            delegateEvent(todo_list, "click", ".destroy", this.destroy.bind(this));
+
+            // $('.new-todo').on('keyup', this.create.bind(this));
+            //$('.toggle-all').on('change', this.toggleAll.bind(this));
+            // $('.footer').on(
+            //     'click',
+            //     '.clear-completed',
+            //     this.destroyCompleted.bind(this)
+            // );
+            // $('.todo-list')
+            //     .on('change', '.toggle', this.toggle.bind(this))
+            //     .on('dblclick', 'label', this.editingMode.bind(this))
+            //     .on('keyup', '.edit', this.editKeyup.bind(this))
+            //     .on('focusout', '.edit', this.update.bind(this))
+            //     .on('click', '.destroy', this.destroy.bind(this));
         },
         render: function() {
             var todos = this.getFilteredTodos();
-            $('.todo-list').html(this.todoTemplate(todos));
-            $('.main').toggle(todos.length > 0);
-            $('.toggle-all').prop('checked', this.getActiveTodos().length === 0);
+
+            var main = document.querySelector(".main");
+            todo_list.innerHTML = this.todoTemplate(todos);
+            //$('.todo-list').html(this.todoTemplate(todos));
+            main.classList.toggle('.hidden', todos.length > 0);
+            // $('.main').toggle(todos.length > 0);
+
+            // $('.toggle-all').prop('checked', this.getActiveTodos().length === 0);
+            toggle_all.checked = this.getActiveTodos().length === 0;
+
             this.renderFooter();
-            $('.new-todo').focus();
+
+            new_todo.focus();
+            //$('.new-todo').focus();
+
+
             util.store('todos-jquery', this.todos);
         },
         renderFooter: function() {
