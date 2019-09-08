@@ -240,7 +240,7 @@ jQuery(function($) {
             // var val = $el.val().trim();
             var el = e.target;
             var $el = el;
-            var val = el.value.trim();
+            var val = $el.value.trim();
 
             // if (el.data('abort')) {
             //     $el.data('abort', false);

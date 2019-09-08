@@ -93,10 +93,15 @@ $("div").css("background", colorCreatePastel());
  */
 
 
+
+/**
+ * Funktion für die zufällige dunkle Farbeerstellung
+ */
+
 function colorCreateDark() {
     var color;
-    var max = 160;
-    var min = 0;
+    var min = Math.ceil(0);
+    var max = Math.floor(160);
 
     var colRed = Math.floor(Math.random() * (max - min)) + min;
     var colBlue = Math.floor(Math.random() * (max - min)) + min;
@@ -112,8 +117,8 @@ function colorCreateDark() {
 
 function colorCreatePastel() {
     var color;
-    var max = 256;
-    var min = 180;
+    var min = Math.ceil(180);
+    var max = Math.floor(256);
 
     var colRed = Math.floor(Math.random() * (max - min)) + min;
     var colBlue = Math.floor(Math.random() * (max - min)) + min;

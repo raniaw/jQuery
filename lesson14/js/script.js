@@ -38,7 +38,7 @@ var context = {
             "actor": {
                 "cast": "Tyrion Lannister",
                 "name": "Peter Dinklage",
-                "haus": "Lennister",
+                "haus": "Lannister",
                 "zitate": "Zuzusehen wie dein abscheulicher Bastard starb, bereitete mir mehr Befriedigung als Tausend lügende Huren!  "
             },
             "age": "50",
