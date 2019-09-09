@@ -16,9 +16,32 @@ pDNumber.append(doubleNumber(13));
 body.appendChild(divUser);
 body.appendChild(pDNumber);
 createEl("p", hi("! Today is " + new Date().getDate() + "." + (new Date().getMonth() + 1) + "." + (new Date().getFullYear())), colorCreateDark(), 'Great Vibes', "30px");
-createInput("input", +(new Date().getMonth() + 1) + "." + new Date().getDate() + "." + (new Date().getFullYear()), "date", colorCreateDark(), "Syncopate");
+createInput("input", +(createDate()), "date", colorCreateDark(), "Syncopate");
 
+//createInput("input", +(new Date().getMonth() + 1) + "." + new Date().getDate() + "." + (new Date().getFullYear()), "date", colorCreateDark(), "Syncopate");
 
+createDate();
+
+function createDate() {
+    let d = new Date();
+    let day = d.getDate();
+    let month = (d.getMonth() + 1);
+    let years = d.getFullYear();
+
+    if (day.lenth == 2) {
+        console.log(day);
+    } else {
+        console.log("0" + day);
+    }
+    if (month.lenth == 2) {
+        console.log(month);
+    } else {
+        console.log("0" + month);
+    }
+    console.log(month + "." + day + "." + years);
+
+    return month + "." + day + "." + years
+}
 
 
 

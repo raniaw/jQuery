@@ -1,5 +1,3 @@
-// export var greeting = "welcome back";
-
 class Person {
     constructor(name, age) {
         this.name = name;

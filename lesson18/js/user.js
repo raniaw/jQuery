@@ -24,11 +24,13 @@ function createInput(el, text, type, color, fontFam) {
     elem.setAttribute("type", type);
     elem.style.color = color;
     elem.style.fontFamily = fontFam;
-    elem.setAttribute("placeholder", text);
-
+    //  elem.setAttribute("placeholder", text);
+    elem.value = text
+    console.log(elem);
     document.body.append(elem);
 
 }
+
 
 
 export { greeting, hi, createEl, createInput }

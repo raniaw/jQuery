@@ -1,24 +1,33 @@
-import Person, { printName, printAge } from './person.js'; // default function in user.js shrebt man ohne geschweifelt klammen
-// import  from './person.js';
-
+import Person, { printName as pName, printAge as pAge } from './person.js'; // default function in user.js shrebt man ohne geschweifelt klammen
+import objDeveloper, * as d from './developer.js';
 var body = document.getElementsByTagName("body")[0];
-
 let person = new Person("Mascha", 5);
 
-console.log(printAge(person));
+// *** to import all from person.js ***
+//import * as p from './person.js';
+//let pers = new p.default("Mascha", 5);
 
 var pPerson = document.getElementById("pPerson");
-pPerson.innerHTML = printName(person) + " " + printAge(person);
+pPerson.innerHTML = pName(person) + " " + pAge(person);
+
+// für '   ***     import * as p from './person.js';    ***   '
+//pPerson.innerHTML = p.printName(pers) + " " + p.printAge(pers);
+pPerson.style.color = colorCreateDark();
+pPerson.style.fontFamily = "Great Vibes";
+pPerson.style.fontSize = "30px";
 
 
-var divUser = document.createElement("div");
-//divUser.append(hi("du"));
+// für classs Developer
+//let dev = new Developer("Rania", "doesn't matter", "fullstack-web developer");
 
-var pDNumber = document.createElement("p");
-//pDNumber.append(doubleNumber(13));
+let pDev = document.getElementById("pDev");
+pDev.innerText = d.printName("Rania") + " " + d.printAge("does'nt matter") + ". " + d.printJob("fullstack Web-Developer");
+pDev.style.color = colorCreateDark();
+pDev.style.fontFamily = "Jura";
+pDev.style.fontSize = "30px";
 
-body.appendChild(divUser);
-body.appendChild(pDNumber);
+
+
 
 
 
